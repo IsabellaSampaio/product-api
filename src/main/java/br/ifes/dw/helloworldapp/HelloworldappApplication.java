@@ -6,9 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Produto API", version = "1.0", description = "Crud de produtos em arquivo e em Banco de dados"))
-public class HelloworldappApplication {
+@OpenAPIDefinition(info =
+@Info(
+		title = "Produto API",
+		version = "1.0",
+		description = "Crud de produtos em arquivo e em Banco de dados - Author: Isabella Sampaio"))
 
+public class HelloworldappApplication {
 	public static void main(String[] args) {SpringApplication.run(HelloworldappApplication.class, args);}
 
 }
