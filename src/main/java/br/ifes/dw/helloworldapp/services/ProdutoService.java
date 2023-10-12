@@ -16,7 +16,7 @@ public class ProdutoService<T extends ProdutoModel> implements ProdutoServiceInt
     public T save(T object) {return genericRepository.save(object);}
     @Override @Transactional
     public void delete(int id) {genericRepository.deleteById((long) id);}
-    @Override
+    @Override   
     public List<T> findAll() {return (List<T>) genericRepository.findAll();}
     @Override
     public Optional<T> findById(int id) {return (Optional<T>) genericRepository.findById((long) id);}

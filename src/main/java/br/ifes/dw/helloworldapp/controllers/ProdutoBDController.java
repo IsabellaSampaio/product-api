@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/produto")
-public class ProdutoController {
+@RequestMapping("/produto/bd")
+public class ProdutoBDController {
     @Autowired
     private ProdutoService<ProdutoModel> produtoService;
 
@@ -56,4 +56,5 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.save(produtoModel));
     }
+
 }
