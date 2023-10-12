@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FileService<T extends ProdutoModel> implements ProdutoServiceInterface<T> {
-    private final String jsonFile = "src/main/java/br/ifes/dw/helloworldapp/files/produtos.json";
+    private final static String jsonFile = "src/main/java/br/ifes/dw/helloworldapp/files/produtos.json";
     private List<T> productList;
     private final Gson gson = new Gson();
     private long id = 1;
