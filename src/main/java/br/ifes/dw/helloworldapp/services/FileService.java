@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FileService<T extends ProdutoModel> implements ProdutoServiceInterface<T> {
-    private final static String jsonFile = "src/main/java/br/ifes/dw/helloworldapp/files/produtos.json";
+    private final static String PRODUTOS_JSON_FILE = "src/main/java/br/ifes/dw/helloworldapp/files/produtos.json";
     private List<T> productList;
     private final Gson gson = new Gson();
     private long id = 1;
@@ -52,13 +52,13 @@ public class FileService<T extends ProdutoModel> implements ProdutoServiceInterf
     }
 
     private void loadProductsFromJson() {
-        try (FileReader reader = new FileReader(jsonFile)) {
+        try (FileReader reader = new FileReader(PRODUTOS_JSON_FILE)) {
             this.productList = gson.fromJson(reader, new TypeToken<List<ProdutoModel>>() {}.getType());
         } catch (IOException e) {throw new HttpClientErrorException(HttpStatus.NOT_FOUND, "Desculpe, não foi possível encontrar os seus dados");}
     }
 
     private void saveProductsToJson() {
-        try {FileWriter writer = new FileWriter(jsonFile);
+        try {FileWriter writer = new FileWriter(PRODUTOS_JSON_FILE);
             gson.toJson(productList, writer);
             writer.close();
         } catch (IOException e) {throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Produto não foi criado com sucesso");}
